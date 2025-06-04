@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generic Services Ltd</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">GSL</div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about-vision-mission">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section with Slideshow -->
+    <section class="hero" id="home">
+      <div class="slideshow">
+        <div
+          class="slide active"
+          style="background-image: url('img/back1.png')"></div>
+        <div class="slide" style="background-image: url('img/back2.png')"></div>
+        <div class="slide"
+          style="background-image: url('img/about1.png')"></div>
+      </div>
+      <div class="hero-content">
+        <h1>Generic Services Ltd</h1>
+        <p>Engineering Excellence Since 2018</p>
+        <a href="#contact" class="btn btn-get-in-touch">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- About, Vision, Mission Section -->
+    <section id="about-vision-mission"
+      class="about-vision-mission-section section">
+      <div class="container grid-two-columns">
+        <!-- Left Column: About -->
+        <div class="about-side">
+          <div class="about-text">
+            <h2>About GSL</h2>
+            <p>
+              Founded in <strong>2018 in Kenya</strong>, GSL is a
+              <strong>black-owned multidisciplinary engineering and construction
+                firm</strong>.
+              Specializing in <strong>civil, surveying, electrical, mechanical,
+                and chemical engineering</strong>,
+              it offers <strong>turnkey solutions</strong> across
+              <strong>energy, water, mining, manufacturing, transport, and
+                infrastructure</strong> sectors.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="img/about1.png" alt="GSL Engineering team"
+              loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Right Column: Vision + Image + Mission (organized in 3 columns) -->
+        <div class="vision-mission-grid">
+          <div class="vision">
+            <h3>Vision</h3>
+            <p>
+              GSL aims to be a <strong>key player in Africa’s economic
+                growth</strong>,
+              driving sustainable <strong>engineering, surveying, and
+                construction</strong>
+              solutions for <strong>bankable projects</strong>.
+            </p>
+          </div>
+
+          <div class="vision-mission-image">
+            <img src="img/vision.png" alt="Vision and Mission" loading="lazy" />
+          </div>
+
+          <div class="mission">
+            <h3>Mission</h3>
+            <p>
+              Providing <strong>innovative, high-quality engineering
+                solutions</strong>
+              tailored to African challenges through:
+            </p>
+            <ul>
+              <li><strong>Efficient turnkey project delivery</strong></li>
+              <li><strong>Modern systems & technologies</strong></li>
+              <li><strong>Timely execution within budget & high
+                  standards</strong></li>
+            </ul>
+            <p>
+              While <strong>empowering employees, growing shareholder value, and
+                protecting the environment</strong>.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="section services">
+        <h2>Our Services</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Land & Property Surveying</h3>
+            <p>
+              Including boundary surveys, subdivision, cadastral surveys, and
+              topographical surveys
+              for land development and legal purposes.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Topographical Mapping & GIS</h3>
+            <p>
+              Creating detailed maps and spatial data analysis using Geographic
+              Information Systems
+              for planning and infrastructure projects.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Construction Surveying</h3>
+            <p>
+              Providing accurate layout, setting out, and monitoring services
+              for
+              civil engineering and
+              building projects.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Multidisciplinary Engineering Consultancy</h3>
+            <p>
+              Project management, feasibility studies, design, procurement,
+              construction supervision,
+              and maintenance across civil, structural, and electrical
+              disciplines.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Geotechnical & Structural Investigations</h3>
+            <p>
+              Site investigations, soil testing, and structural assessments to
+              ensure safety and
+              compliance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <form action="https://formsubmit.co/mwendeh99@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message"
+            required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <p>
+          Shankardas House, Plot No. 209/4945, New Wing Room 204, Moi Avenue
+        </p>
+        <p>Email: info@gsl.co.ke | Phone: +254 724 997 189</p>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 Generic Services Ltd. All rights reserved.</p>
+      </footer>
+
+      <!-- JavaScript for Slideshow -->
+      <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) {
+              slide.classList.add("active");
+            }
+          });
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+        setInterval(nextSlide, 5000);
+      });
+
+      function toggleMenu() {
+        const navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("show");
+      }
+    </script>
+    </body>
+  </html>
